@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account - Mental Health Tracker</title>
+    <link rel="icon" type="image/x-icon" href="https://www.eduhealth.co.uk/wp-content/uploads/2022/01/Eduhealth-1024x479.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(45deg, #007bff, #00c49a);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+
+        #signup-container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+            padding: 25px;
+            width: 400px; 
+            text-align: center;
+            box-shadow: #444af1;
+            box-decoration-break: calc();
+            scrollbar-shadow-color: rgb(48, 76, 234)
+        }
+
+       
+        label {
+            display: inline-block;
+            width: 100px;
+            margin-top: 10px;
+            color: #333;
+            text-align: left; 
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="email"],
+        input[type="date"],
+        select {
+            display: inline-block;
+            width: calc(100% - 110px);
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #007bff;
+        }
+
+        
+        button {
+            width: 80%; 
+            padding: 20px;
+            margin-top: 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        
+        a {
+            text-decoration: none;
+            color: #007bff;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: #0056b3;
+        }
+
+       
+        .error-message {
+            color: red;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+        
+        .mental-wellbeing-image {
+            width: 200px;
+            height: 100px;
+            margin: 20px auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div id="signup-container">
+        <img src="https://www.eduhealth.co.uk/wp-content/uploads/2022/01/Eduhealth-1024x479.png" alt="Mental Well-being" class="mental-wellbeing-image">
+        <h2>Create Account</h2>
+        <form id="signup-form" action="/Signup" method="post">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName" required>
+
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="lastName" required>
+
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob" name="dob" required>
+
+            
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="repeatPassword">Re-enter Password</label>
+            <input type="password" id="repeatPassword" name="repeatPassword" required>
+
+            
+            <div class="error-message" id="error-message"></div>
+
+            <button type="submit">Create Account</button>
+        </form>
+       
+        <p>Already have an account? <a href="login page.html">Log in</a></p>
+    </div>
+
+    <script>
+        
+        document.getElementById("signup-form").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+           
+            const firstName = document.getElementById("firstName").value;
+            const lastName = document.getElementById("lastName").value;
+            const dob = document.getElementById("dob").value;
+            const gender = document.getElementById("gender").value;
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            const repeatPassword = document.getElementById("repeatPassword").value;
+
+            
+            if (password !== repeatPassword) {
+                alert("Passwords do not match. Please try again.");
+                return; 
+            }
+
+            
+            const errorMessage = document.getElementById("error-message");
+            errorMessage.textContent = "An error occurred during registration. Please try again.";
+
+           .
+            const registrationSuccessful = true;
+
+            if (registrationSuccessful) {
+                alert("Registration successful!");
+            } else {
+                alert("Registration unsuccessful. Please try again.");
+            }
+        });
+    </script>
+</body>
+</html>
